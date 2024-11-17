@@ -13,14 +13,14 @@
         --popover: 222.2 84% 4.9%;
         --popover-foreground: 210 40% 98%;
 
-        --primary: 210 40% 98%;
-        --primary-foreground: 222.2 47.4% 11.2%;
+        --primary: 209, 100%, 58%;
+        --primary-foreground: 0 0% 100%;
 
         --secondary: 217.2 32.6% 17.5%;
         --secondary-foreground: 210 40% 98%;
 
-        --muted: 217.2 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
+        --muted: 0, 0%, 6%;
+        --muted-foreground: 240, 2%, 54%;
 
         --accent: 217.2 32.6% 17.5%;
         --accent-foreground: 210 40% 98%;
@@ -31,6 +31,8 @@
         --border: 217.2 32.6% 17.5%;
         --input: 217.2 32.6% 17.5%;
         --ring: 212.7 26.8% 83.9%;
+
+        --radius: 1.5rem;
     }
 }
 
@@ -41,4 +43,42 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+@layer utilities {
+    .common-padding {
+        @apply sm:py-32 py-20 sm:px-10 px-5;
+    }
+    .section-heading {
+        @apply text-muted-foreground lg:text-6xl md:text-5xl text-3xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20;
+    }
+    .video-carousel_container {
+        @apply relative sm:w-[70vw] w-[88vw] md:h-[70vh] sm:h-[50vh] h-[35vh];
+    }
+    .color-container {
+        @apply flex items-center justify-center px-4 py-4 rounded-full backdrop-blur;
+    }
+    .size-btn {
+        @apply w-10 h-10 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all;
+    }
+}
+
+.scrim-max-width {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    position: relative;
+    max-width: 1120px;
+}
+
+@keyframes scale {
+    0% {
+        width: 0.75rem;
+    }
+    100% {
+        width: 3rem;
+    }
+}
+
+.scale-span {
+    animation: scale 2s ease-in-out forwards;
 }
